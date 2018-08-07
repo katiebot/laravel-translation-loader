@@ -28,7 +28,7 @@ class LanguageLine extends Model
         });
     }
 
-    public static function getTranslationsForGroup(string $locale, string $group): array
+    public static function getTranslationsForGroup(string $locale, string $group)
     {
         return Cache::rememberForever(static::getCacheKey($group, $locale), function () use ($group, $locale) {
             return static::query()
@@ -44,7 +44,7 @@ class LanguageLine extends Model
         });
     }
 
-    public static function getCacheKey(string $group, string $locale): string
+    public static function getCacheKey(string $group, string $locale)
     {
         return "spatie.translation-loader.{$group}.{$locale}";
     }
@@ -54,7 +54,7 @@ class LanguageLine extends Model
      *
      * @return string
      */
-    public function getTranslation(string $locale): ?string
+    public function getTranslation(string $locale)
     {
         if(! isset($this->text[$locale])) {
             $fallback = config('app.fallback_locale');

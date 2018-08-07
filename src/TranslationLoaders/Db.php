@@ -7,7 +7,7 @@ use Spatie\TranslationLoader\Exceptions\InvalidConfiguration;
 
 class Db implements TranslationLoader
 {
-    public function loadTranslations(string $locale, string $group): array
+    public function loadTranslations(string $locale, string $group)
     {
         $model = $this->getConfiguredModelClass();
 
