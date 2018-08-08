@@ -29,13 +29,9 @@ class TranslationLoaderManager extends FileLoader
         return array_replace_recursive($fileTranslations, $loaderTranslations);
     }
 
-    protected function getTranslationsForTranslationLoaders(
-        string $locale,
-        string $group,
-        string $namespace = null
-    ) {
+    protected function getTranslationsForTranslationLoaders($locale, $group, $namespace = null) {
         return collect(config('translation-loader.translation_loaders'))
-            ->map(function (string $className) {
+            ->map(function ($className) {
                 return app($className);
             })
             ->mapWithKeys(function (TranslationLoader $translationLoader) use ($locale, $group, $namespace) {
