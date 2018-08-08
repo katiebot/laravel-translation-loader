@@ -85,7 +85,7 @@ class LanguageLine extends Model
         }
     }
 
-    protected function getTranslatedLocales(): array
+    protected function getTranslatedLocales()
     {
         return array_keys($this->text);
     }

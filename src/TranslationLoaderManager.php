@@ -33,7 +33,7 @@ class TranslationLoaderManager extends FileLoader
         string $locale,
         string $group,
         string $namespace = null
-    ): array {
+    ) {
         return collect(config('translation-loader.translation_loaders'))
             ->map(function (string $className) {
                 return app($className);

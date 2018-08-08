@@ -14,7 +14,7 @@ class Db implements TranslationLoader
         return $model::getTranslationsForGroup($locale, $group);
     }
 
-    protected function getConfiguredModelClass(): string
+    protected function getConfiguredModelClass()
     {
         $modelClass = config('translation-loader.model');
 
