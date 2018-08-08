@@ -12,5 +12,5 @@ interface TranslationLoader
      *
      * @return array
      */
-    public function loadTranslations($locale, $group)
+    public function loadTranslations($locale, $group);
 }
